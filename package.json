@@ -17,6 +17,9 @@
     "jquery": "^3.4.1",
     "marionette.renderers": "^0.6.0",
     "marionette.routing": "^1.1.0",
+    "popper.js": "^1.15.0",
+    "rivets": "^0.9.6",
+    "rivets-backbone-adapter": "^2.2.0",
     "underscore": "^1.9.1"
   },
   "devDependencies": {
@@ -28,6 +31,8 @@
     "eslint": "^5.16.0",
     "eslint-loader": "^2.1.2",
     "file-loader": "^4.0.0",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^3.2.0",
     "mini-css-extract-plugin": "^0.7.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^7.1.0",

@@ -2,12 +2,17 @@
 
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebPackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const merge = require('webpack-merge');
 const devMode = process.env.NODE_ENV !== 'production';
 
 const webpackCommon = {
+  resolve: {
+    alias: {
+      marionette: 'backbone.marionette'
+    }
+  },
   entry: {
     app: ['./app/initialize']
   },
@@ -53,7 +58,6 @@ const webpackCommon = {
       {
         test: /\.(jpe?g|png|gif)$/,
         use: [{
-            /* inline if smaller than 10 KB, otherwise load as a file */
           loader: 'url-loader',
           options: {
             limit: 10000
@@ -72,14 +76,14 @@ const webpackCommon = {
     publicPath: '/'
   },
   plugins: [
+    new HtmlWebPackPlugin({
+      filename: './index.html',
+      template: './index.html',
+    }),
     new MiniCssExtractPlugin({
       filename: devMode ? '[name].css' : '[name].[hash].css',
       chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
     }),
-    new CopyWebpackPlugin([{
-      from: './app/assets/index.html',
-      to: './index.html'
-    }]),
     new webpack.ProvidePlugin({
       $: 'jquery',
       _: 'underscore'
