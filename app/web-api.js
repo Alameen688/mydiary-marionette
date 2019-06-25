@@ -1,3 +1,5 @@
+import { formatDate } from './utils';
+
 let latency = 200;
 let id = 0;
 
@@ -8,38 +10,33 @@ function getId() {
 let entries = [
   {
     id: getId(),
-    firstName: 'John',
-    lastName: 'Tolkien',
-    email: 'tolkien@inklings.com',
-    phoneNumber: '867-5309'
+    title: 'John',
+    content: 'Tolkien',
+    date: '2019-06-21T14:07:28.243Z'
   },
   {
     id: getId(),
-    firstName: 'Clive',
-    lastName: 'Lewis',
-    email: 'lewis@inklings.com',
-    phoneNumber: '867-5309'
+    title: 'Clive',
+    content: 'Lewis',
+    date: '2019-06-21T14:07:28.243Z'
   },
   {
     id: getId(),
-    firstName: 'Owen',
-    lastName: 'Barfield',
-    email: 'barfield@inklings.com',
-    phoneNumber: '867-5309'
+    title: 'Owen',
+    content: 'Barfield',
+    date: '2019-06-21T14:07:28.243Z'
   },
   {
     id: getId(),
-    firstName: 'Charles',
-    lastName: 'Williams',
-    email: 'williams@inklings.com',
-    phoneNumber: '867-5309'
+    title: 'Charles',
+    content: 'Williams',
+    date: '2019-06-21T14:07:28.243Z'
   },
   {
     id: getId(),
-    firstName: 'Roger',
-    lastName: 'Green',
-    email: 'green@inklings.com',
-    phoneNumber: '867-5309'
+    title: 'Roger',
+    content: 'Green',
+    date: '2019-06-21T14:07:28.243Z'
   }
 ];
 
@@ -52,9 +49,10 @@ export class WebAPI {
         let results = entries.map(x =>  {
           return {
             id: x.id,
-            firstName: x.firstName,
-            lastName: x.lastName,
-            email: x.email
+            title: x.title,
+            firstLetter: x.title.slice(0, 1),
+            date: formatDate(x.date),
+            content: x.content,
           }
         });
         resolve(results);

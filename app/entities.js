@@ -2,10 +2,10 @@ import Backbone from 'backbone';
 
 export const Entry = Backbone.Model.extend({
   defaults: {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phoneNumber: ''
+    title: '',
+    content: '',
+    firstLetter: '',
+    date: ''
   }
 });
 

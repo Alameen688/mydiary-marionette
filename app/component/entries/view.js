@@ -4,20 +4,13 @@ import '../../assets/styles/entry.scss';
 
 const entryHtml = `
 <div>
-      <h1 className="title">{model:firstName}</h1>
+      <h1 className="title">{model:title}</h1>
       <div className="meta">
-        <div className="avatar" entry-letter={model:firstName}>
-        </div>
         <div className="date">
-          <i className="fa fa-calendar"></i> <span>{model:lastName}</span>
+          <i className="fa fa-calendar"></i> <span>{model:date}</span>
         </div>
       </div>
     </div>`;
-// const itemHtml = `
-//         <a>
-//           <h4 class="list-group-item-heading">{model:firstName} {model:lastName}</h4>
-//           <p class="list-group-item-text">{model:email}</p>
-//         </a>`;
 
 const EntryItemView = View.extend({
   tagName: 'a',
@@ -40,7 +33,7 @@ export default View.extend({
   template: require('./template.html'),
   regions: {
     entrylist: '#grid-box',
-    outlet: '.entry-outlet'
+    outlet: '#entry-content-box'
   },
   initialize(options) {
     this.entries = options.entries

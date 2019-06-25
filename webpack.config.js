@@ -10,7 +10,8 @@ const devMode = process.env.NODE_ENV !== 'production';
 const webpackCommon = {
   resolve: {
     alias: {
-      marionette: 'backbone.marionette'
+      Marionette: 'backbone.marionette',
+      Backbone: 'backbone'
     }
   },
   entry: {
