@@ -14,7 +14,7 @@
     "backbone": "^1.4.0",
     "backbone.marionette": "^4.1.2",
     "backbone.radio": "^2.0.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "marionette.renderers": "^0.6.0",
     "marionette.routing": "^1.1.0",
     "popper.js": "^1.15.0",
