@@ -20,7 +20,7 @@
     "popper.js": "^1.15.0",
     "rivets": "^0.9.6",
     "rivets-backbone-adapter": "^2.2.0",
-    "underscore": "^1.9.1"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
